@@ -5,7 +5,7 @@ const moment = require('moment');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.get((req, res) => {
+app.get('/', (req, res) => {
     res.send({
         success: true,
         message: 'Hey there',
