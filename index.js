@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
     res.send({
         success: true,
         message: 'Hey there',
-        timestamp: moment().format()
+        timestamp: moment().format('MMMM Do YYYY, h:mm:ss a')
     });
 });
 
