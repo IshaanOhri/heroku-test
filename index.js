@@ -6,7 +6,7 @@ const CronJob = require('cron').CronJob;
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-const job = new CronJob('0 */1 * * * *', function() {
+const job = new CronJob('0 */15 * * * *', function() {
   fetch('https://heroku-time-test.herokuapp.com/')
     .then(res => res.text())
     .then(body => console.log(body));
