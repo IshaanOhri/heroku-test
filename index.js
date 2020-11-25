@@ -1,14 +1,12 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const moment = require('moment');
 const fetch = require('node-fetch');
+const CronJob = require('cron').CronJob;
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-var CronJob = require('cron').CronJob;
-
-var job = new CronJob('* * * * * *', function() {
+const job = new CronJob('0 */1 * * * *', function() {
   console.log('You will see this message every second');
   fetch('https://heroku-time-test.herokuapp.com/')
     .then(res => res.text())
